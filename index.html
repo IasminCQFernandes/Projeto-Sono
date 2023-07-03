@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="index.js"></script>
+
+    <title>Time Sleep</title>
+</head>
+<body>
+    <div class="hora">
+    <!-- JavaScript -->
+        <p id="tempo">22:30</p>
+    </div>
+    
+    <div class="alarme" onclick="addAlarme()">
+        <img src="img/alarm.png" alt="alarme">
+        <p id="horaDespertador"></p>
+    </div>
+
+    <div class="iniciar" onclick="iniciarCronometro()">
+        <p>INICIAR SONO</p>
+    </div>
+    
+    <div class="cronometro">
+        <p id="time">00:00:00</p>
+        <p>h</p>
+    </div>
+
+    <div class="stop" >
+        <img src="img/despertar.png" alt="" onclick="pararCronometro()">
+        <img src="img/reset.png" alt="" onclick="zerarCronometro()">
+    </div>
+
+    <script>
+        // Selecionar o elemento <p> com o id "tempo"
+var elementoTempo = document.getElementById("tempo");
+
+// Função para atualizar as horas
+function atualizarHora() {
+    var dataAtual = new Date();
+    var hora = dataAtual.getHours();
+    var minutos = dataAtual.getMinutes();
+
+    // Formatar a hora com dois dígitos
+    var horaFormatada = hora < 10 ? "0" + hora : hora;
+    var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
+
+    // Atualizar o conteúdo do elemento <p> com a nova hora
+    elementoTempo.innerHTML = horaFormatada + ":" + minutosFormatados 
+    }
+
+        // Chamar a função inicialmente para exibir a hora atual
+        atualizarHora();
+
+        // Atualizar a hora a cada segundo (1000 milissegundos)
+        setInterval(atualizarHora, 1000);
+
+    </script>
+</body>
+</html>

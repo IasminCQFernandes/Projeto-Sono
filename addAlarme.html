@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styleAlarme.css">
+
+    <title>Time Sleep</title>
+</head>
+<body>
+    <div class="hora">
+    <!-- JavaScript -->
+        <p id="hora">22:30</p>
+    </div>
+    
+    <div class="alarme">
+
+        <div class="despertador">
+            <img src="img/alarm.png" alt="alarme">
+            <p id="horaDespertador">ADICIONAR ALARME</p> 
+        </div>
+
+        <div class="horaAlarme">
+
+            <div class="relogio">
+                <img src="img/relogio.png" alt="relogio">
+                <input type="time">
+            </div>
+
+            <div class="soneca">
+                <p>Soneca:</p>
+                <input type="radio">
+            </div>
+
+        </div>
+
+        <div class="semana">
+            <label for="segunda">S <input type="radio" id="segunda"></label>
+
+            <label for="terca">T <input type="radio" id="terca"></label>
+
+            <label for="quarta">Q <input type="radio" id="quarta"></label>
+
+            <label for="quinta">Q <input type="radio" id="quinta"></label>
+
+            <label for="sexta">S <input type="radio" id="sexta"></label>
+
+            <label for="sabado">S <input type="radio" id="sabado"></label>
+
+            <label for="domingo">D <input type="radio" id="domingo"></label>
+        </div>
+
+        <div class="add">
+            <button onclick="voltar()">Adicionar</button>
+        </div>
+    </div>
+
+    
+</body>
+
+<script>
+    function voltar() {
+        alert("Alarme ativado!")
+        window.location.href = "index.html";
+    }
+</script>
+</html>
