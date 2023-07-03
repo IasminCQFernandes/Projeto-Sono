@@ -54,10 +54,23 @@ function atualizarHora() {
     var horaFormatada = hora < 10 ? "0" + hora : hora;
     var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
 
+
+    if(hora > 5 && hora<18){
+        let body = document.querySelector("body");
+        body.style.backgroundImage = 'url(img/dia.gif)'
+
+        let alarme = document.querySelector(".alarme");
+        alarme.style.backgroundColor = '#5D86C7'
+
+        let input = document.querySelector('.iniciar');
+        input.style.backgroundColor = '#5D86C7'
+
+        
+    }
     // Atualizar o conteúdo do elemento <p> com a nova hora
     elementoTempo.innerHTML = horaFormatada + ":" + minutosFormatados 
     }
-
+                     
         // Chamar a função inicialmente para exibir a hora atual
         atualizarHora();
 

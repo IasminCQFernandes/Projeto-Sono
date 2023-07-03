@@ -16,7 +16,7 @@
 <body>
     <div class="hora">
     <!-- JavaScript -->
-        <p id="hora">22:30</p>
+        <p id="tempo">22:30</p>
     </div>
     
     <div class="alarme">
@@ -69,5 +69,42 @@
         alert("Alarme ativado!")
         window.location.href = "index.html";
     }
+    var elementoTempo = document.getElementById("tempo");
+
+// Função para atualizar as horas
+function atualizarHora() {
+    var dataAtual = new Date();
+    var hora = dataAtual.getHours();
+    var minutos = dataAtual.getMinutes();
+
+    // Formatar a hora com dois dígitos
+    var horaFormatada = hora < 10 ? "0" + hora : hora;
+    var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
+
+
+    if(hora > 5 && hora<18){
+        var body = document.querySelector("body");
+        body.style.backgroundImage = 'url(img/dia.gif)';
+
+        let alarme = document.querySelector(".alarme");
+        alarme.style.backgroundColor = '#5D86C7'
+
+        let input = document.querySelector('input');
+        input.style.backgroundColor = '#399EC6'
+
+        let button = document.querySelector("button");
+        button.style.backgroundColor='#399EC6'
+    }
+    // Atualizar o conteúdo do elemento <p> com a nova hora
+    elementoTempo.innerHTML = horaFormatada + ":" + minutosFormatados 
+    }
+                     
+        // Chamar a função inicialmente para exibir a hora atual
+        atualizarHora();
+
+        // Atualizar a hora a cada segundo (1000 milissegundos)
+        setInterval(atualizarHora, 1000);
+
+    
 </script>
 </html>
